@@ -1,0 +1,11 @@
+<launch>
+    <node name="node1"        pkg="rosserial_python"      type="serial_node.py">
+    <param name="port"              type="string"               value="/dev/ttyUSB0"/>
+    </node>
+    <node name="node2"        pkg="rosserial_python"      type="serial_node.py">
+    <param name="port"              type="string"               value="/dev/ttyUSB1"/>
+    </node>
+    <node name="node3"        pkg="rosserial_python"      type="serial_node.py">
+    <param name="port"              type="string"               value="/dev/ttyUSB2"/>
+    </node>
+</launch>

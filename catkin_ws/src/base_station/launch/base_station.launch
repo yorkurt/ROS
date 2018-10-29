@@ -1,0 +1,17 @@
+<launch>
+    <include file="$(find joysticks)/launch/joylaunch.launch" />
+    <!--<include file="$(find hugin_panorama)/launch/hugin_panorama.launch">
+        <arg name="image" value="/turret_cam/raw_image" />
+    </include>-->
+    <!-- <include file="$(find nmea_tcp_driver)/launch/gps.launch" /> 
+    <node pkg="image_view" name="turret_cam" type="image_view" respawn="true">
+      <remap from="image" to="turret_cam/image_raw" />
+      <param name="image_transport" value="theora" />
+      <param name="window_name" value="Turret Camera" />  
+    </node>-->
+    <node pkg="image_view" name="effector_cam" type="image_view" respawn="true">
+      <remap from="image" to="effector_cam/image_raw" />
+      <param name="image_transport" value="theora" />
+      <param name="window_name" value="Effector Camera" />  
+    </node>
+</launch> 

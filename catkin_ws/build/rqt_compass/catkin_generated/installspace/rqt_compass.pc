@@ -1,0 +1,8 @@
+prefix=/home/adam/catkin_ws/install
+
+Name: rqt_compass
+Description: Description of rqt_compass
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/adam/catkin_ws/install/lib 
+Requires: 
