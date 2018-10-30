@@ -1,0 +1,24 @@
+<launch>
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="left_stick" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+    <remap from="joy" to="left_stick" />
+  </node>
+
+  <node respawn="true" pkg="joy" type="joy_node" name="right_stick" >
+    <param name="dev" type="string" value="/dev/input/js1" />
+    <param name="deadzone" value="0.12" />
+	<remap from="joy" to="right_stick" />
+  </node>
+
+  <node pkg="joysticks" name="translator" type="talker.py">
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="2" type="double"/>
+  <param name="scale_angular" value="2" type="double"/>
+</launch>
