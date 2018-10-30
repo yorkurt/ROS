@@ -1,0 +1,18 @@
+<launch>
+   <!-- launch video stream -->
+   <include file="$(find video_stream_opencv)/launch/camera.launch" >
+        <arg name="camera_name" value="turret_cam" />
+        <arg name="video_stream_provider" value="1" />
+        <arg name="fps" value="30" />
+        <arg name="frame_id" value="turret_cam" />
+	<arg name="visualize" value="true" />
+
+   </include>
+   <include file="$(find video_stream_opencv)/launch/camera.launch" >
+        <arg name="camera_name" value="effector_cam" />
+        <arg name="video_stream_provider" value="3" />
+        <arg name="fps" value="10" />
+        <arg name="frame_id" value="effector_cam" />
+	<arg name="visualize" value="true" />
+   </include>
+</launch>
