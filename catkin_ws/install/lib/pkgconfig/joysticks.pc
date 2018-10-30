@@ -1,8 +1,0 @@
-prefix=/home/yurt/catkin_ws/install
-
-Name: joysticks
-Description: Description of joysticks
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/yurt/catkin_ws/install/lib 
-Requires: message_runtime

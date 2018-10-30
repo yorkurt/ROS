@@ -1,8 +1,0 @@
-<launch>
-
- <!-- base station bearing node -->
-
-  <node pkg="srvs" name="base_bearings" type="base_station_bearing_server.py">
-  </node>
-
-</launch>
