@@ -1,2 +1,0 @@
-base_station:joysticks:nmea_tcp_driver:rosduino:rover:rqt_compass:srvs:video_stream_opencv
--DCATKIN_DEVEL_PREFIX=/home/adam/ros/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/adam/ros/catkin_ws/install -G Unix Makefiles
