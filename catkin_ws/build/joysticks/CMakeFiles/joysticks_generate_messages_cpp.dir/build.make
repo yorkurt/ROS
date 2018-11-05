@@ -43,43 +43,43 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for joysticks_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/progress.make
 
-joysticks/CMakeFiles/joysticks_generate_messages_cpp: /home/adam/catkin_ws/devel/include/joysticks/drive.h
-joysticks/CMakeFiles/joysticks_generate_messages_cpp: /home/adam/catkin_ws/devel/include/joysticks/grip.h
-joysticks/CMakeFiles/joysticks_generate_messages_cpp: /home/adam/catkin_ws/devel/include/joysticks/arm.h
+joysticks/CMakeFiles/joysticks_generate_messages_cpp: /home/adam/ros/catkin_ws/devel/include/joysticks/arm.h
+joysticks/CMakeFiles/joysticks_generate_messages_cpp: /home/adam/ros/catkin_ws/devel/include/joysticks/drive.h
+joysticks/CMakeFiles/joysticks_generate_messages_cpp: /home/adam/ros/catkin_ws/devel/include/joysticks/grip.h
 
 
-/home/adam/catkin_ws/devel/include/joysticks/drive.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/adam/catkin_ws/devel/include/joysticks/drive.h: /home/adam/catkin_ws/src/joysticks/msg/drive.msg
-/home/adam/catkin_ws/devel/include/joysticks/drive.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from joysticks/drive.msg"
-	cd /home/adam/catkin_ws/src/joysticks && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/include/joysticks -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/adam/ros/catkin_ws/devel/include/joysticks/arm.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/adam/ros/catkin_ws/devel/include/joysticks/arm.h: /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg
+/home/adam/ros/catkin_ws/devel/include/joysticks/arm.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from joysticks/arm.msg"
+	cd /home/adam/ros/catkin_ws/src/joysticks && /home/adam/ros/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/include/joysticks -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/adam/catkin_ws/devel/include/joysticks/grip.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/adam/catkin_ws/devel/include/joysticks/grip.h: /home/adam/catkin_ws/src/joysticks/msg/grip.msg
-/home/adam/catkin_ws/devel/include/joysticks/grip.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from joysticks/grip.msg"
-	cd /home/adam/catkin_ws/src/joysticks && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/include/joysticks -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/adam/ros/catkin_ws/devel/include/joysticks/drive.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/adam/ros/catkin_ws/devel/include/joysticks/drive.h: /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg
+/home/adam/ros/catkin_ws/devel/include/joysticks/drive.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from joysticks/drive.msg"
+	cd /home/adam/ros/catkin_ws/src/joysticks && /home/adam/ros/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/include/joysticks -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/adam/catkin_ws/devel/include/joysticks/arm.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/adam/catkin_ws/devel/include/joysticks/arm.h: /home/adam/catkin_ws/src/joysticks/msg/arm.msg
-/home/adam/catkin_ws/devel/include/joysticks/arm.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from joysticks/arm.msg"
-	cd /home/adam/catkin_ws/src/joysticks && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/include/joysticks -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/adam/ros/catkin_ws/devel/include/joysticks/grip.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/adam/ros/catkin_ws/devel/include/joysticks/grip.h: /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg
+/home/adam/ros/catkin_ws/devel/include/joysticks/grip.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from joysticks/grip.msg"
+	cd /home/adam/ros/catkin_ws/src/joysticks && /home/adam/ros/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/include/joysticks -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 joysticks_generate_messages_cpp: joysticks/CMakeFiles/joysticks_generate_messages_cpp
-joysticks_generate_messages_cpp: /home/adam/catkin_ws/devel/include/joysticks/drive.h
-joysticks_generate_messages_cpp: /home/adam/catkin_ws/devel/include/joysticks/grip.h
-joysticks_generate_messages_cpp: /home/adam/catkin_ws/devel/include/joysticks/arm.h
+joysticks_generate_messages_cpp: /home/adam/ros/catkin_ws/devel/include/joysticks/arm.h
+joysticks_generate_messages_cpp: /home/adam/ros/catkin_ws/devel/include/joysticks/drive.h
+joysticks_generate_messages_cpp: /home/adam/ros/catkin_ws/devel/include/joysticks/grip.h
 joysticks_generate_messages_cpp: joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build.make
 
 .PHONY : joysticks_generate_messages_cpp
@@ -90,10 +90,10 @@ joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build: joysticks_genera
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build
 
 joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/clean:
-	cd /home/adam/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/clean
 
 joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/joysticks /home/adam/catkin_ws/build /home/adam/catkin_ws/build/joysticks /home/adam/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/joysticks /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/joysticks /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/depend
 

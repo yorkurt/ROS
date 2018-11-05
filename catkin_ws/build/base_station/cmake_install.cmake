@@ -1,8 +1,8 @@
-# Install script for directory: /home/adam/catkin_ws/src/base_station
+# Install script for directory: /home/adam/ros/catkin_ws/src/base_station
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/adam/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/adam/ros/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/adam/catkin_ws/build/base_station/catkin_generated/installspace/base_station.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/adam/ros/catkin_ws/build/base_station/catkin_generated/installspace/base_station.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/base_station/cmake" TYPE FILE FILES
-    "/home/adam/catkin_ws/build/base_station/catkin_generated/installspace/base_stationConfig.cmake"
-    "/home/adam/catkin_ws/build/base_station/catkin_generated/installspace/base_stationConfig-version.cmake"
+    "/home/adam/ros/catkin_ws/build/base_station/catkin_generated/installspace/base_stationConfig.cmake"
+    "/home/adam/ros/catkin_ws/build/base_station/catkin_generated/installspace/base_stationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/base_station" TYPE FILE FILES "/home/adam/catkin_ws/src/base_station/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/base_station" TYPE FILE FILES "/home/adam/ros/catkin_ws/src/base_station/package.xml")
 endif()
 

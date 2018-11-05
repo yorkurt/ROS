@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for run_tests_nmea_tcp_driver_roslint.
 
@@ -63,10 +63,10 @@ nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/build: run_test
 .PHONY : nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/build
 
 nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/clean:
-	cd /home/adam/catkin_ws/build/nmea_tcp_driver && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/nmea_tcp_driver && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/cmake_clean.cmake
 .PHONY : nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/clean
 
 nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/nmea_tcp_driver /home/adam/catkin_ws/build /home/adam/catkin_ws/build/nmea_tcp_driver /home/adam/catkin_ws/build/nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/nmea_tcp_driver /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/nmea_tcp_driver /home/adam/ros/catkin_ws/build/nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint.dir/depend
 

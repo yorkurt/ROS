@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for _run_tests_nmea_tcp_driver.
 
@@ -63,10 +63,10 @@ nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/build: _run_tests_nmea
 .PHONY : nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/build
 
 nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/clean:
-	cd /home/adam/catkin_ws/build/nmea_tcp_driver && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_nmea_tcp_driver.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/nmea_tcp_driver && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_nmea_tcp_driver.dir/cmake_clean.cmake
 .PHONY : nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/clean
 
 nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/nmea_tcp_driver /home/adam/catkin_ws/build /home/adam/catkin_ws/build/nmea_tcp_driver /home/adam/catkin_ws/build/nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/nmea_tcp_driver /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/nmea_tcp_driver /home/adam/ros/catkin_ws/build/nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : nmea_tcp_driver/CMakeFiles/_run_tests_nmea_tcp_driver.dir/depend
 

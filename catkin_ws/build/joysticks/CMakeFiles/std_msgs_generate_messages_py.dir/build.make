@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/build: std_msgs_generate_
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/build
 
 joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	cd /home/adam/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/joysticks /home/adam/catkin_ws/build /home/adam/catkin_ws/build/joysticks /home/adam/catkin_ws/build/joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/joysticks /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/joysticks /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/depend
 

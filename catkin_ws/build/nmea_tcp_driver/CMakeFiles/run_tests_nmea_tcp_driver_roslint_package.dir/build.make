@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for run_tests_nmea_tcp_driver_roslint_package.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
 include nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/progress.make
 
 nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package:
-	cd /home/adam/catkin_ws/build/nmea_tcp_driver && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/adam/catkin_ws/build/test_results/nmea_tcp_driver/roslint-nmea_tcp_driver.xml --working-dir /home/adam/catkin_ws/build/nmea_tcp_driver "/opt/ros/kinetic/share/roslint/cmake/../../../lib/roslint/test_wrapper /home/adam/catkin_ws/build/test_results/nmea_tcp_driver/roslint-nmea_tcp_driver.xml make roslint_nmea_tcp_driver"
+	cd /home/adam/ros/catkin_ws/build/nmea_tcp_driver && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/adam/ros/catkin_ws/build/test_results/nmea_tcp_driver/roslint-nmea_tcp_driver.xml --working-dir /home/adam/ros/catkin_ws/build/nmea_tcp_driver "/opt/ros/kinetic/share/roslint/cmake/../../../lib/roslint/test_wrapper /home/adam/ros/catkin_ws/build/test_results/nmea_tcp_driver/roslint-nmea_tcp_driver.xml make roslint_nmea_tcp_driver"
 
 run_tests_nmea_tcp_driver_roslint_package: nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package
 run_tests_nmea_tcp_driver_roslint_package: nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/build.make
@@ -67,10 +67,10 @@ nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/build: 
 .PHONY : nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/build
 
 nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/clean:
-	cd /home/adam/catkin_ws/build/nmea_tcp_driver && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/nmea_tcp_driver && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/cmake_clean.cmake
 .PHONY : nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/clean
 
 nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/nmea_tcp_driver /home/adam/catkin_ws/build /home/adam/catkin_ws/build/nmea_tcp_driver /home/adam/catkin_ws/build/nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/nmea_tcp_driver /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/nmea_tcp_driver /home/adam/ros/catkin_ws/build/nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : nmea_tcp_driver/CMakeFiles/run_tests_nmea_tcp_driver_roslint_package.dir/depend
 

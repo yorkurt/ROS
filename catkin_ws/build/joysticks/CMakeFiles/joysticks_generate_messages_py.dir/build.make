@@ -43,49 +43,49 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for joysticks_generate_messages_py.
 
 # Include the progress variables for this target.
 include joysticks/CMakeFiles/joysticks_generate_messages_py.dir/progress.make
 
-joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py
-joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py
-joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py
-joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py
+joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py
+joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py
+joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py
+joysticks/CMakeFiles/joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py
 
 
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py: /home/adam/catkin_ws/src/joysticks/msg/drive.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG joysticks/drive"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py: /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG joysticks/arm"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg
 
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py: /home/adam/catkin_ws/src/joysticks/msg/grip.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG joysticks/grip"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py: /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG joysticks/drive"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg
 
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py: /home/adam/catkin_ws/src/joysticks/msg/arm.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG joysticks/arm"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py: /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG joysticks/grip"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg
 
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py
-/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for joysticks"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg --initpy
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py
+/home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for joysticks"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg --initpy
 
 joysticks_generate_messages_py: joysticks/CMakeFiles/joysticks_generate_messages_py
-joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py
-joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py
-joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py
-joysticks_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py
+joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_arm.py
+joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_drive.py
+joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/_grip.py
+joysticks_generate_messages_py: /home/adam/ros/catkin_ws/devel/lib/python2.7/dist-packages/joysticks/msg/__init__.py
 joysticks_generate_messages_py: joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build.make
 
 .PHONY : joysticks_generate_messages_py
@@ -96,10 +96,10 @@ joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build: joysticks_generat
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build
 
 joysticks/CMakeFiles/joysticks_generate_messages_py.dir/clean:
-	cd /home/adam/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_py.dir/clean
 
 joysticks/CMakeFiles/joysticks_generate_messages_py.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/joysticks /home/adam/catkin_ws/build /home/adam/catkin_ws/build/joysticks /home/adam/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/joysticks /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/joysticks /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_py.dir/depend
 

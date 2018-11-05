@@ -1,8 +1,8 @@
-prefix=/home/adam/catkin_ws/install
+prefix=/home/adam/ros/catkin_ws/install
 
 Name: nmea_tcp_driver
 Description: Description of nmea_tcp_driver
 Version: 0.5.0
 Cflags: 
-Libs: -L/home/adam/catkin_ws/install/lib 
+Libs: -L/home/adam/ros/catkin_ws/install/lib 
 Requires: 

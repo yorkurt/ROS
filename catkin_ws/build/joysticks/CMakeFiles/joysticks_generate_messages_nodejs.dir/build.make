@@ -43,40 +43,40 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for joysticks_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/progress.make
 
-joysticks/CMakeFiles/joysticks_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js
-joysticks/CMakeFiles/joysticks_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js
-joysticks/CMakeFiles/joysticks_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js
+joysticks/CMakeFiles/joysticks_generate_messages_nodejs: /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js
+joysticks/CMakeFiles/joysticks_generate_messages_nodejs: /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js
+joysticks/CMakeFiles/joysticks_generate_messages_nodejs: /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js
 
 
-/home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js: /home/adam/catkin_ws/src/joysticks/msg/drive.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from joysticks/drive.msg"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg
+/home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js: /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from joysticks/arm.msg"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg
 
-/home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js: /home/adam/catkin_ws/src/joysticks/msg/grip.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from joysticks/grip.msg"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg
+/home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js: /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from joysticks/drive.msg"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg
 
-/home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js: /home/adam/catkin_ws/src/joysticks/msg/arm.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from joysticks/arm.msg"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg
+/home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js: /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from joysticks/grip.msg"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg
 
 joysticks_generate_messages_nodejs: joysticks/CMakeFiles/joysticks_generate_messages_nodejs
-joysticks_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js
-joysticks_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js
-joysticks_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js
+joysticks_generate_messages_nodejs: /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/arm.js
+joysticks_generate_messages_nodejs: /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/drive.js
+joysticks_generate_messages_nodejs: /home/adam/ros/catkin_ws/devel/share/gennodejs/ros/joysticks/msg/grip.js
 joysticks_generate_messages_nodejs: joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build.make
 
 .PHONY : joysticks_generate_messages_nodejs
@@ -87,10 +87,10 @@ joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build: joysticks_gen
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build
 
 joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/clean:
-	cd /home/adam/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/clean
 
 joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/joysticks /home/adam/catkin_ws/build /home/adam/catkin_ws/build/joysticks /home/adam/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/joysticks /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/joysticks /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/depend
 

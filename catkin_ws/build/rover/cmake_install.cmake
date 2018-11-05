@@ -1,8 +1,8 @@
-# Install script for directory: /home/adam/catkin_ws/src/rover
+# Install script for directory: /home/adam/ros/catkin_ws/src/rover
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/adam/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/adam/ros/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/adam/catkin_ws/build/rover/catkin_generated/installspace/rover.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/adam/ros/catkin_ws/build/rover/catkin_generated/installspace/rover.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rover/cmake" TYPE FILE FILES
-    "/home/adam/catkin_ws/build/rover/catkin_generated/installspace/roverConfig.cmake"
-    "/home/adam/catkin_ws/build/rover/catkin_generated/installspace/roverConfig-version.cmake"
+    "/home/adam/ros/catkin_ws/build/rover/catkin_generated/installspace/roverConfig.cmake"
+    "/home/adam/ros/catkin_ws/build/rover/catkin_generated/installspace/roverConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rover" TYPE FILE FILES "/home/adam/catkin_ws/src/rover/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rover" TYPE FILE FILES "/home/adam/ros/catkin_ws/src/rover/package.xml")
 endif()
 

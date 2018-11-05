@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for joysticks_genpy.
 
@@ -63,10 +63,10 @@ joysticks/CMakeFiles/joysticks_genpy.dir/build: joysticks_genpy
 .PHONY : joysticks/CMakeFiles/joysticks_genpy.dir/build
 
 joysticks/CMakeFiles/joysticks_genpy.dir/clean:
-	cd /home/adam/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_genpy.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_genpy.dir/cmake_clean.cmake
 .PHONY : joysticks/CMakeFiles/joysticks_genpy.dir/clean
 
 joysticks/CMakeFiles/joysticks_genpy.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/joysticks /home/adam/catkin_ws/build /home/adam/catkin_ws/build/joysticks /home/adam/catkin_ws/build/joysticks/CMakeFiles/joysticks_genpy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/joysticks /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/joysticks /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/joysticks_genpy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : joysticks/CMakeFiles/joysticks_genpy.dir/depend
 

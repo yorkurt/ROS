@@ -2,7 +2,7 @@
 
 message(STATUS "joysticks: 3 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg")
+set(MSG_I_FLAGS "-Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,19 +17,19 @@ add_custom_target(joysticks_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
 add_custom_target(_joysticks_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "joysticks" "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "joysticks" "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" ""
 )
 
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
 add_custom_target(_joysticks_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "joysticks" "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "joysticks" "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" ""
 )
 
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
 add_custom_target(_joysticks_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "joysticks" "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "joysticks" "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" ""
 )
 
 #
@@ -39,19 +39,19 @@ add_custom_target(_joysticks_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/drive.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/joysticks
 )
 _generate_msg_cpp(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/grip.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/joysticks
 )
 _generate_msg_cpp(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/arm.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/joysticks
@@ -71,11 +71,11 @@ add_custom_target(joysticks_generate_messages_cpp
 add_dependencies(joysticks_generate_messages joysticks_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_cpp _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_cpp _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_cpp _joysticks_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -88,19 +88,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS joysticks_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/drive.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/joysticks
 )
 _generate_msg_eus(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/grip.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/joysticks
 )
 _generate_msg_eus(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/arm.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/joysticks
@@ -120,11 +120,11 @@ add_custom_target(joysticks_generate_messages_eus
 add_dependencies(joysticks_generate_messages joysticks_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_eus _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_eus _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_eus _joysticks_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -137,19 +137,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS joysticks_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/drive.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/joysticks
 )
 _generate_msg_lisp(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/grip.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/joysticks
 )
 _generate_msg_lisp(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/arm.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/joysticks
@@ -169,11 +169,11 @@ add_custom_target(joysticks_generate_messages_lisp
 add_dependencies(joysticks_generate_messages joysticks_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_lisp _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_lisp _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_lisp _joysticks_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -186,19 +186,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS joysticks_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/drive.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/joysticks
 )
 _generate_msg_nodejs(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/grip.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/joysticks
 )
 _generate_msg_nodejs(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/arm.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/joysticks
@@ -218,11 +218,11 @@ add_custom_target(joysticks_generate_messages_nodejs
 add_dependencies(joysticks_generate_messages joysticks_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_nodejs _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_nodejs _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_nodejs _joysticks_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -235,19 +235,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS joysticks_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/drive.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/joysticks
 )
 _generate_msg_py(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/grip.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/joysticks
 )
 _generate_msg_py(joysticks
-  "/home/adam/catkin_ws/src/joysticks/msg/arm.msg"
+  "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/joysticks
@@ -267,11 +267,11 @@ add_custom_target(joysticks_generate_messages_py
 add_dependencies(joysticks_generate_messages joysticks_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_py _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_py _joysticks_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/joysticks/msg/arm.msg" NAME_WE)
+get_filename_component(_filename "/home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg" NAME_WE)
 add_dependencies(joysticks_generate_messages_py _joysticks_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

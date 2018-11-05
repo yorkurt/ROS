@@ -43,46 +43,46 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 # Utility rule file for joysticks_generate_messages_eus.
 
 # Include the progress variables for this target.
 include joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/progress.make
 
-joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l
-joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l
-joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l
-joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/manifest.l
+joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l
+joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l
+joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l
+joysticks/CMakeFiles/joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/manifest.l
 
 
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l: /home/adam/catkin_ws/src/joysticks/msg/drive.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from joysticks/drive.msg"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l: /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from joysticks/arm.msg"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/ros/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg
 
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l: /home/adam/catkin_ws/src/joysticks/msg/grip.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from joysticks/grip.msg"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l: /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from joysticks/drive.msg"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/ros/catkin_ws/src/joysticks/msg/drive.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg
 
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l: /home/adam/catkin_ws/src/joysticks/msg/arm.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from joysticks/arm.msg"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/src/joysticks/msg/arm.msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l: /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from joysticks/grip.msg"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/ros/catkin_ws/src/joysticks/msg/grip.msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Ijoysticks:/home/adam/ros/catkin_ws/src/joysticks/msg -p joysticks -o /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg
 
-/home/adam/catkin_ws/devel/share/roseus/ros/joysticks/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for joysticks"
-	cd /home/adam/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/adam/catkin_ws/devel/share/roseus/ros/joysticks joysticks std_msgs joysticks
+/home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/ros/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for joysticks"
+	cd /home/adam/ros/catkin_ws/build/joysticks && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks joysticks std_msgs joysticks
 
 joysticks_generate_messages_eus: joysticks/CMakeFiles/joysticks_generate_messages_eus
-joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l
-joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l
-joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l
-joysticks_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/joysticks/manifest.l
+joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/arm.l
+joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/drive.l
+joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/msg/grip.l
+joysticks_generate_messages_eus: /home/adam/ros/catkin_ws/devel/share/roseus/ros/joysticks/manifest.l
 joysticks_generate_messages_eus: joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build.make
 
 .PHONY : joysticks_generate_messages_eus
@@ -93,10 +93,10 @@ joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build: joysticks_genera
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build
 
 joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/clean:
-	cd /home/adam/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/adam/ros/catkin_ws/build/joysticks && $(CMAKE_COMMAND) -P CMakeFiles/joysticks_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/clean
 
 joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/catkin_ws/src /home/adam/catkin_ws/src/joysticks /home/adam/catkin_ws/build /home/adam/catkin_ws/build/joysticks /home/adam/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adam/ros/catkin_ws/src /home/adam/ros/catkin_ws/src/joysticks /home/adam/ros/catkin_ws/build /home/adam/ros/catkin_ws/build/joysticks /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/depend
 

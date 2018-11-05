@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adam/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/adam/ros/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
+CMAKE_BINARY_DIR = /home/adam/ros/catkin_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/adam/catkin_ws/build/CMakeFiles /home/adam/catkin_ws/build/joysticks/CMakeFiles/progress.marks
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/adam/catkin_ws/build/CMakeFiles 0
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/adam/ros/catkin_ws/build/CMakeFiles /home/adam/ros/catkin_ws/build/joysticks/CMakeFiles/progress.marks
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/adam/ros/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/clean
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/preinstall
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/preinstall
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_genpy.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_genpy.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_genpy.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_genpy.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ joysticks_genpy: joysticks/CMakeFiles/joysticks_genpy.dir/rule
 
 # fast build rule for target.
 joysticks_genpy/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_genpy.dir/build.make joysticks/CMakeFiles/joysticks_genpy.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_genpy.dir/build.make joysticks/CMakeFiles/joysticks_genpy.dir/build
 .PHONY : joysticks_genpy/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_gennodejs.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_gennodejs.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_gennodejs.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ joysticks_gennodejs: joysticks/CMakeFiles/joysticks_gennodejs.dir/rule
 
 # fast build rule for target.
 joysticks_gennodejs/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_gennodejs.dir/build.make joysticks/CMakeFiles/joysticks_gennodejs.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_gennodejs.dir/build.make joysticks/CMakeFiles/joysticks_gennodejs.dir/build
 .PHONY : joysticks_gennodejs/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_genlisp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_genlisp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_genlisp.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_genlisp.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ joysticks_genlisp: joysticks/CMakeFiles/joysticks_genlisp.dir/rule
 
 # fast build rule for target.
 joysticks_genlisp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_genlisp.dir/build.make joysticks/CMakeFiles/joysticks_genlisp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_genlisp.dir/build.make joysticks/CMakeFiles/joysticks_genlisp.dir/build
 .PHONY : joysticks_genlisp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ std_msgs_generate_messages_py: joysticks/CMakeFiles/std_msgs_generate_messages_p
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : joysticks/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ roscpp_generate_messages_py: joysticks/CMakeFiles/roscpp_generate_messages_py.di
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_py.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_py.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ rosgraph_msgs_generate_messages_eus: joysticks/CMakeFiles/rosgraph_msgs_generate
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ rosgraph_msgs_generate_messages_nodejs: joysticks/CMakeFiles/rosgraph_msgs_gener
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ roscpp_generate_messages_cpp: joysticks/CMakeFiles/roscpp_generate_messages_cpp.
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_generate_messages_py.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_py.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_py.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ joysticks_generate_messages_py: joysticks/CMakeFiles/joysticks_generate_messages
 
 # fast build rule for target.
 joysticks_generate_messages_py/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_py.dir/build
 .PHONY : joysticks_generate_messages_py/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ rosgraph_msgs_generate_messages_cpp: joysticks/CMakeFiles/rosgraph_msgs_generate
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ std_msgs_generate_messages_cpp: joysticks/CMakeFiles/std_msgs_generate_messages_
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ roscpp_generate_messages_eus: joysticks/CMakeFiles/roscpp_generate_messages_eus.
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ rosgraph_msgs_generate_messages_py: joysticks/CMakeFiles/rosgraph_msgs_generate_
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -372,12 +372,12 @@ rosgraph_msgs_generate_messages_lisp: joysticks/CMakeFiles/rosgraph_msgs_generat
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -387,12 +387,12 @@ roscpp_generate_messages_nodejs: joysticks/CMakeFiles/roscpp_generate_messages_n
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -402,12 +402,12 @@ std_msgs_generate_messages_nodejs: joysticks/CMakeFiles/std_msgs_generate_messag
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -417,12 +417,12 @@ joysticks_generate_messages_nodejs: joysticks/CMakeFiles/joysticks_generate_mess
 
 # fast build rule for target.
 joysticks_generate_messages_nodejs/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_nodejs.dir/build
 .PHONY : joysticks_generate_messages_nodejs/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -432,12 +432,12 @@ joysticks_generate_messages_lisp: joysticks/CMakeFiles/joysticks_generate_messag
 
 # fast build rule for target.
 joysticks_generate_messages_lisp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_lisp.dir/build
 .PHONY : joysticks_generate_messages_lisp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -447,12 +447,12 @@ roscpp_generate_messages_lisp: joysticks/CMakeFiles/roscpp_generate_messages_lis
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -462,12 +462,12 @@ std_msgs_generate_messages_eus: joysticks/CMakeFiles/std_msgs_generate_messages_
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -477,12 +477,12 @@ std_msgs_generate_messages_lisp: joysticks/CMakeFiles/std_msgs_generate_messages
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joysticks/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_geneus.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_geneus.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_geneus.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_geneus.dir/rule
 
 # Convenience name for target.
@@ -492,12 +492,12 @@ joysticks_geneus: joysticks/CMakeFiles/joysticks_geneus.dir/rule
 
 # fast build rule for target.
 joysticks_geneus/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_geneus.dir/build.make joysticks/CMakeFiles/joysticks_geneus.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_geneus.dir/build.make joysticks/CMakeFiles/joysticks_geneus.dir/build
 .PHONY : joysticks_geneus/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -507,12 +507,12 @@ joysticks_generate_messages_cpp: joysticks/CMakeFiles/joysticks_generate_message
 
 # fast build rule for target.
 joysticks_generate_messages_cpp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_cpp.dir/build
 .PHONY : joysticks_generate_messages_cpp/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_generate_messages.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -522,12 +522,12 @@ joysticks_generate_messages: joysticks/CMakeFiles/joysticks_generate_messages.di
 
 # fast build rule for target.
 joysticks_generate_messages/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages.dir/build
 .PHONY : joysticks_generate_messages/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -537,12 +537,12 @@ joysticks_generate_messages_eus: joysticks/CMakeFiles/joysticks_generate_message
 
 # fast build rule for target.
 joysticks_generate_messages_eus/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build.make joysticks/CMakeFiles/joysticks_generate_messages_eus.dir/build
 .PHONY : joysticks_generate_messages_eus/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/rule
 .PHONY : joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/rule
 
 # Convenience name for target.
@@ -552,12 +552,12 @@ _joysticks_generate_messages_check_deps_arm: joysticks/CMakeFiles/_joysticks_gen
 
 # fast build rule for target.
 _joysticks_generate_messages_check_deps_arm/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/build.make joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/build.make joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_arm.dir/build
 .PHONY : _joysticks_generate_messages_check_deps_arm/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/rule
 .PHONY : joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/rule
 
 # Convenience name for target.
@@ -567,12 +567,12 @@ _joysticks_generate_messages_check_deps_drive: joysticks/CMakeFiles/_joysticks_g
 
 # fast build rule for target.
 _joysticks_generate_messages_check_deps_drive/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/build.make joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/build.make joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_drive.dir/build
 .PHONY : _joysticks_generate_messages_check_deps_drive/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/rule
 .PHONY : joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/rule
 
 # Convenience name for target.
@@ -582,12 +582,12 @@ _joysticks_generate_messages_check_deps_grip: joysticks/CMakeFiles/_joysticks_ge
 
 # fast build rule for target.
 _joysticks_generate_messages_check_deps_grip/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/build.make joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/build.make joysticks/CMakeFiles/_joysticks_generate_messages_check_deps_grip.dir/build
 .PHONY : _joysticks_generate_messages_check_deps_grip/fast
 
 # Convenience name for target.
 joysticks/CMakeFiles/joysticks_gencpp.dir/rule:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_gencpp.dir/rule
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 joysticks/CMakeFiles/joysticks_gencpp.dir/rule
 .PHONY : joysticks/CMakeFiles/joysticks_gencpp.dir/rule
 
 # Convenience name for target.
@@ -597,7 +597,7 @@ joysticks_gencpp: joysticks/CMakeFiles/joysticks_gencpp.dir/rule
 
 # fast build rule for target.
 joysticks_gencpp/fast:
-	cd /home/adam/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_gencpp.dir/build.make joysticks/CMakeFiles/joysticks_gencpp.dir/build
+	cd /home/adam/ros/catkin_ws/build && $(MAKE) -f joysticks/CMakeFiles/joysticks_gencpp.dir/build.make joysticks/CMakeFiles/joysticks_gencpp.dir/build
 .PHONY : joysticks_gencpp/fast
 
 # Help Target
@@ -653,6 +653,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/adam/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/adam/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

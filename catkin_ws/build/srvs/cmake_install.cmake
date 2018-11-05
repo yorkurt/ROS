@@ -1,8 +1,8 @@
-# Install script for directory: /home/adam/catkin_ws/src/srvs
+# Install script for directory: /home/adam/ros/catkin_ws/src/srvs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/adam/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/adam/ros/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,21 +33,21 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/srvs/srv" TYPE FILE FILES "/home/adam/catkin_ws/src/srvs/srv/base_station_bearing.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/srvs/srv" TYPE FILE FILES "/home/adam/ros/catkin_ws/src/srvs/srv/base_station_bearing.srv")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/adam/catkin_ws/build/srvs/catkin_generated/installspace/srvs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/adam/ros/catkin_ws/build/srvs/catkin_generated/installspace/srvs.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/srvs/cmake" TYPE FILE FILES
-    "/home/adam/catkin_ws/build/srvs/catkin_generated/installspace/srvsConfig.cmake"
-    "/home/adam/catkin_ws/build/srvs/catkin_generated/installspace/srvsConfig-version.cmake"
+    "/home/adam/ros/catkin_ws/build/srvs/catkin_generated/installspace/srvsConfig.cmake"
+    "/home/adam/ros/catkin_ws/build/srvs/catkin_generated/installspace/srvsConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/srvs" TYPE FILE FILES "/home/adam/catkin_ws/src/srvs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/srvs" TYPE FILE FILES "/home/adam/ros/catkin_ws/src/srvs/package.xml")
 endif()
 

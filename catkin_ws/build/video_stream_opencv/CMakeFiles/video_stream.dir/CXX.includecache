@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/adam/catkin_ws/src/video_stream_opencv/src/video_stream.cpp
+/home/adam/ros/catkin_ws/src/video_stream_opencv/src/video_stream.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -24,7 +24,17 @@ sstream
 boost/assign/list_of.hpp
 -
 
-/home/adam/catkin_ws/src/vision_opencv/cv_bridge/include/cv_bridge/cv_bridge.h
+/opt/ros/kinetic/include/camera_info_manager/camera_info_manager.h
+ros/ros.h
+-
+boost/thread/mutex.hpp
+-
+sensor_msgs/CameraInfo.h
+-
+sensor_msgs/SetCameraInfo.h
+-
+
+/opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h
 -
 sensor_msgs/CompressedImage.h
@@ -40,16 +50,6 @@ opencv2/imgproc/imgproc.hpp
 opencv2/imgproc/types_c.h
 -
 stdexcept
--
-
-/opt/ros/kinetic/include/camera_info_manager/camera_info_manager.h
-ros/ros.h
--
-boost/thread/mutex.hpp
--
-sensor_msgs/CameraInfo.h
--
-sensor_msgs/SetCameraInfo.h
 -
 
 /opt/ros/kinetic/include/image_transport/camera_publisher.h
