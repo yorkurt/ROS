@@ -1,0 +1,8 @@
+prefix=/home/adam/ros/catkin_ws/install
+
+Name: rqt_gui
+Description: Description of rqt_gui
+Version: 0.5.0
+Cflags: 
+Libs: -L/home/adam/ros/catkin_ws/install/lib 
+Requires: 
