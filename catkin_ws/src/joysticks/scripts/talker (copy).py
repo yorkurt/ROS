@@ -4,7 +4,6 @@ from std_msgs.msg import Int16, Bool, String
 from sensor_msgs.msg import Joy
 from joysticks.msg import drive, arm, grip
 import os
-import math #added math
 
 controller_topic = "controller"
 controller_port = rospy.get_param(controller_topic)['dev']
@@ -17,46 +16,24 @@ def joystick_callback(data):
 	global left_offset
 	global right_offset
 
-	
-	right_xaxis = 3
-	right_yaxis = 4
-	right_shoulder = 5
-	left_shoulder = 2
-	middle_button = 10
-	up_down_axis = 7
+	left_axis = 1
+	right_axis = 5
+	right_shoulder = 4
+	left_shoulder = 3
+	middle_button = 12
+	up_down_axis = 10
 	headlight_button = 3
 	lock_button = 2
 
-
+	
 	headlight_switch(data.buttons[headlight_button])
 	lock_switch(data.buttons[lock_button])
 	mode_switch(data.buttons[middle_button]) # switch modes if the middle button is pressed
-	#left_xstick = 255 * data.axes[0] # obtain left thumbstick data
-	#left_ystick = 255 * data.axes[1] # obtain left thumbstick data
-	right_xstick = data.axes[right_xaxis] # obtain left thumbstick data
-	right_ystick = data.axes[right_yaxis] # obtain right thumbstick data
+
+	left_stick = 255 * data.axes[left_axis] # obtain left thumbstick data
+	right_stick = 255 * data.axes[right_axis] # obtain right thumbstick data
 	up_down = 255 * data.axes[up_down_axis] # obtain d-pad data
 
-	# convert to polar
-	r = math.hypot(right_ystick, right_xstick)
-	t = math.atan2(right_xstick, right_ystick)
-
-	# rotate by 45 degrees
-	t += math.pi / 4
-
-	# back to cartesian
-	left = r * math.cos(t)
-	right = r * math.sin(t)
-
-	# rescale the new coords
-	left = left * math.sqrt(2)
-	right = right * math.sqrt(2)
-
-	# clamp to -255/+255
-	left_motor = max(-1, min(left, 1)) *255
-	right_motor = max(-1, min(right, 1)) *255
-
-	
 	# buttons initialize at 0 rather than -1, so compensate for startup:
 	if left_offset != 0 and data.axes[right_shoulder] != 0:
 		left_offset = 0
@@ -68,8 +45,8 @@ def joystick_callback(data):
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
 		msg = drive()
-		msg.left = left_motor
-		msg.right = right_motor
+		msg.left = left_stick
+		msg.right = right_stick
 		pub_drive.publish(msg)
 	# arm mode: publish axis data to arm topic
 	elif mode == "arm":
@@ -88,8 +65,6 @@ def joystick_callback(data):
 
 	# publish turret data
 	pub_turret.publish(turret)
-
-
 def headlight_switch(button):
 	global headlights_mode
 	global pub_headlights

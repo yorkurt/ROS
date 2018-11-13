@@ -11,6 +11,29 @@ controller_port = rospy.get_param(controller_topic)['dev']
 left_offset = -1
 right_offset = -1
 headlights_mode = "off"
+
+def steer(x,y)
+	# convert to polar
+	r = math.hypot(y,x)
+	t = math.atan2(x,y)
+
+	# rotate by 45 degrees
+	t += math.pi / 4
+
+	# back to cartesian
+	left = r * math.cos(t)
+	right = r * math.sin(t)
+
+	# rescale the new coords
+	left = left * math.sqrt(2)
+	right = right * math.sqrt(2)
+
+	# clamp to -255/+255
+	left = max(-1, min(left, 1))
+	right = max(-1, min(right, 1)) 
+
+	return left,right
+
 # responds to raw joystick data, splitting it into topics relevant to different devices
 def joystick_callback(data):
 	global mode # the current mode of the control system
@@ -36,25 +59,10 @@ def joystick_callback(data):
 	right_xstick = data.axes[right_xaxis] # obtain left thumbstick data
 	right_ystick = data.axes[right_yaxis] # obtain right thumbstick data
 	up_down = 255 * data.axes[up_down_axis] # obtain d-pad data
-
-	# convert to polar
-	r = math.hypot(right_ystick, right_xstick)
-	t = math.atan2(right_xstick, right_ystick)
-
-	# rotate by 45 degrees
-	t += math.pi / 4
-
-	# back to cartesian
-	left = r * math.cos(t)
-	right = r * math.sin(t)
-
-	# rescale the new coords
-	left = left * math.sqrt(2)
-	right = right * math.sqrt(2)
-
-	# clamp to -255/+255
-	left_motor = max(-1, min(left, 1)) *255
-	right_motor = max(-1, min(right, 1)) *255
+	
+	motor1,motor2 = steer(right_xstick,right_ystick)
+	left_motor = motor1 *255
+	right_motor = motor2 *255
 
 	
 	# buttons initialize at 0 rather than -1, so compensate for startup:
