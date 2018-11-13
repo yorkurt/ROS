@@ -180,10 +180,13 @@ class Compass(Plugin):
 	self.radio_sub = rospy.Subscriber("/radio", Float32, self.radio_callback)
 	self.oxygen_sub = rospy.Subscriber("/oxygen", Float32, self.oxygen_callback)
 	self.load_sub = rospy.Subscriber("/load", Float32, self.load_callback)
+	self.drive_sub = rospy.Subscriber("/controller_timeout", Bool, self.drive_callback)
         pass
 
     def load_callback(self, data):
 	self.load = data.data
+	def drive_callback(self, data):
+		self.drive = data.data
     def oxygen_callback(self, data):
 	self.oxygen = data.data
     def temperature_callback(self, data):
@@ -216,13 +219,13 @@ class Compass(Plugin):
         self._widget.bearingLabel.setText(("%.2f degrees" % (self.rover_bearing)));
         self._widget.goalDistanceData.setText(("%.3f km" % self.distance(self.rover_position, self.goal_position)))
         self._widget.baseDistance.setText(("%.3f km" % self.distance(self.rover_position, self.base_position)))
-	self._widget.modeData.setText(self.mode)
-	self._widget.airPressureData.setText(("%.2f kPa" % (self.atmo)))
-	self._widget.radiationData.setText(("%.2f uSv +/- %.2f" % (self.rad, self.rad_error)))
-        self._widget.temperatureData.setText(("%.2f C" % self.temperature))
-	self._widget.radioData.setText(("%.2f V" % self.radio))
-	self._widget.oxygenData.setText(("%.4f" % self.oxygen))
-	self._widget.loadData.setText(("%.2f" % self.load))
+		self._widget.modeData.setText(self.mode)
+		self._widget.airPressureData.setText(("%.2f kPa" % (self.atmo)))
+		self._widget.radiationData.setText(("%.2f uSv +/- %.2f" % (self.rad, self.rad_error)))
+		self._widget.temperatureData.setText(("%.2f C" % self.temperature))
+		self._widget.radioData.setText(("%.2f V" % self.radio))
+		self._widget.oxygenData.setText(("%.4f" % self.oxygen))
+		self._widget.loadData.setText(("%.2f" % self.drive))
     def distance (self, pos1, pos2):
         R = 6371
         deltaLat = math.radians(pos2['lat'] -  pos1['lat'])
