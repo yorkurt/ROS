@@ -1,372 +1,380 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Compass</class>
- <widget class="QWidget" name="Compass">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>825</width>
-    <height>409</height>
+    <width>1024</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <widget class="QLabel" name="compass">
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="batteryVoltage">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>331</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <row>
+     <property name="text">
+      <string>Motor 1</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Motor 2</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Electronics</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Current</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Voltage</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="temp">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>70</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Temperature: </string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="compass" native="true">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>180</y>
+      <width>300</width>
+      <height>300</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentLat">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>10</y>
+      <width>221</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current Lat:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentLong">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>231</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current Long:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="targetLong">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>36</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="targetLat_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>40</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Target Lat:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="targetLat">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>36</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="targetLong_2">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>40</y>
+      <width>101</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Target Long:</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="signalStrength">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>110</y>
+      <width>118</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="signalStrengthLabel">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>100</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Signal Strength: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="driveMode">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>140</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Drive Mode: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="roverHeading">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>331</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Rover Heading: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="antennaHeading">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>331</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Antenna Heading: </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>70</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="waypointTable">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>110</y>
+      <width>321</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>Waypoint 1</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Waypoint 2</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Waypoint 3</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Waypoint 4</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Waypoint 5</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Distance</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Heading</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
-     <height>400</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="rover">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>250</y>
-     <width>100</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="destination">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>30</y>
-     <width>25</width>
+     <width>1024</width>
      <height>25</height>
     </rect>
    </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
   </widget>
-  <widget class="QLabel" name="base">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>350</y>
-     <width>25</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>0</y>
-     <width>194</width>
-     <height>211</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="D">
-    <property name="sizeConstraint">
-     <enum>QLayout::SetNoConstraint</enum>
-    </property>
-    <item>
-     <widget class="QLabel" name="destinationLabel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;Destination&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="latLayout">
-      <item>
-       <widget class="QLabel" name="latLabel">
-        <property name="text">
-         <string>Latitude:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="latSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="latText"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="longLayout">
-      <item>
-       <widget class="QLabel" name="longLabel">
-        <property name="text">
-         <string>Longitude: </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="longSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="longText"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="goButton">
-      <property name="text">
-       <string>Go!</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>219</y>
-     <width>191</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="dataLayout">
-    <item>
-     <layout class="QHBoxLayout" name="bearingLayout">
-      <item>
-       <widget class="QLabel" name="bearingData">
-        <property name="text">
-         <string>Bearing:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="bearingLabel">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="baseDistanceLayout">
-      <item>
-       <widget class="QLabel" name="baseDistanceLabel">
-        <property name="text">
-         <string>Base Distance:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="baseDistance">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="goalDistanceLayout">
-      <item>
-       <widget class="QLabel" name="goalDistanceLabel">
-        <property name="text">
-         <string>Goal Distance:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="goalDistanceData">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>599</x>
-     <y>-1</y>
-     <width>221</width>
-     <height>391</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="scienceLayout">
-    <item>
-     <layout class="QHBoxLayout" name="driveLayout">
-      <item>
-       <widget class="QLabel" name="modeLabel">
-        <property name="text">
-         <string>Mode:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="modeData">
-        <property name="text">
-         <string>drive</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="radiationLayout">
-      <item>
-       <widget class="QLabel" name="radiationLabel">
-        <property name="text">
-         <string>Radiation:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="radiationData">
-        <property name="text">
-         <string>0.0 uSv +/- 0.0</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="airPressureLayout">
-      <item>
-       <widget class="QLabel" name="airPressureLabel">
-        <property name="text">
-         <string>Air Pressure:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="airPressureData">
-        <property name="text">
-         <string>0.0 kPa</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="temperatureLayout">
-      <item>
-       <widget class="QLabel" name="temperatureLabel">
-        <property name="text">
-         <string>Temperature: </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="temperatureData">
-        <property name="text">
-         <string>0 degrees</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="oxygenLayout">
-      <item>
-       <widget class="QLabel" name="oxygenLabel">
-        <property name="text">
-         <string>Oxygen:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="oxygenData">
-        <property name="text">
-         <string>0%</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="radioLayout">
-      <item>
-       <widget class="QLabel" name="radioData">
-        <property name="text">
-         <string>Radio Signal:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="radioLabel">
-        <property name="text">
-         <string>0 V</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="loadLayout">
-      <item>
-       <widget class="QLabel" name="loadLabel">
-        <property name="text">
-         <string>Load Voltage: </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="loadData">
-        <property name="text">
-         <string>0 V</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

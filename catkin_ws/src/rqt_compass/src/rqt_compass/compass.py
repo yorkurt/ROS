@@ -1,4 +1,4 @@
-# Copyright (c) 2018, Matthew Cardinal, York University Robotics Society
+# Copyright (c) 2018, Adam Silverman et al, York University Robotics Society
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -35,232 +35,211 @@ import sys
 import math
 import Queue
 
-
 from qt_gui.plugin import Plugin
 from python_qt_binding import loadUi, QtGui, QtCore, QtWidgets
 from python_qt_binding.QtWidgets import QWidget
 from std_msgs.msg import Float32, String
 from sensor_msgs.msg import NavSatFix
-# ui image paths
-rover_image = os.path.join(rospkg.RosPack().get_path('rqt_compass'), 'images', 'rover.png')
-compass_image = os.path.join(rospkg.RosPack().get_path('rqt_compass'), 'images', 'compass.png')
-destination_image = os.path.join(rospkg.RosPack().get_path('rqt_compass'), 'images', 'destination.png')
-base_image = os.path.join(rospkg.RosPack().get_path('rqt_compass'), 'images', 'base.png')
 
+# -*- coding: utf-8 -*-
 
-class Compass(Plugin):
-    def center(self, label):
-        c_x = self._widget.compass.width() / 2 + self._widget.compass.x() - label.width() / 2
-        c_y = self._widget.compass.height() / 2 + self._widget.compass.y() - label.height() / 2
-        label.move(int(c_x), int(c_y))
-    # set initial position and sizes for ui images
-    def setup(self):
-        self.setImage(compass_image, 300, 300, self._widget.compass, self.rover_bearing, scale = False)
-        self.setImage(compass_image, 300, 300, self._widget.compass, self.rover_bearing, scale = False)
-        self.setImage(rover_image, 100, 100, self._widget.rover, 0)
-        self.setImage(destination_image, 100, 200, self._widget.destination, 0)
-        self.setImage(base_image, 100, 800, self._widget.base, 0)
-        self.center(self._widget.rover)
-        self.base_bearing = self.gps_to_bearing(self.rover_position['lat'], self.rover_position['long'], self.base_position['lat'], self.base_position['long'])
-        self.goal_bearing = self.gps_to_bearing(self.rover_position['lat'], self.rover_position['long'], self.goal_position['lat'], self.goal_position['long'])
-        self.setTargetPosition(self._widget.destination, self.goal_bearing+ self.rover_bearing, self._widget.compass)
-        self.setTargetPosition(self._widget.base, self.base_bearing + self.rover_bearing, self._widget.compass)
+# Form implementation generated from reading ui file 'compass.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.3
+#
+# WARNING! All changes made in this file will be lost!
 
-    # set the position and bearing of an image
-    def setImage(self, image_string, x, y, label, l_bearing, scale=True):
-        if scale == False:
-            l_bearing -= 90
-        p_map = QtGui.QPixmap(image_string)
-        p_map = p_map.scaled(x, y, QtCore.Qt.KeepAspectRatio)
-        transform = QtGui.QTransform().rotate(l_bearing)
-        p_map = p_map.transformed(transform, QtCore.Qt.SmoothTransformation)
-        QtWidgets.QLabel.setPixmap(label , p_map)
-        label.setAlignment(QtCore.Qt.AlignCenter)
-        if scale == True:
-            label.setScaledContents(True)
+from PyQt5 import QtCore, QtGui, QtWidgets
 
-    # set the position and bearing of a target location
-    def setTargetPosition(self, label, bearing, compass):
-        bearing = math.radians(- 1 * bearing)
-        radius = compass.x() + (compass.width() / 2)
-        new_x = radius + math.cos(bearing) * 0.59 * radius - 0.5 * label.width()
-        new_y = radius - radius * math.sin(bearing) * 0.59 - 0.5 *label.width()
-        label.move(int(new_x), int(new_y))
+class Compass(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1024, 600)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.batteryVoltage = QtWidgets.QTableWidget(self.centralwidget)
+        self.batteryVoltage.setGeometry(QtCore.QRect(20, 10, 331, 131))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.batteryVoltage.setFont(font)
+        self.batteryVoltage.setObjectName("batteryVoltage")
+        self.batteryVoltage.setColumnCount(2)
+        self.batteryVoltage.setRowCount(3)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        item.setFont(font)
+        self.batteryVoltage.setVerticalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        item.setFont(font)
+        self.batteryVoltage.setVerticalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        item.setFont(font)
+        self.batteryVoltage.setVerticalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        item.setFont(font)
+        self.batteryVoltage.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        item.setFont(font)
+        self.batteryVoltage.setHorizontalHeaderItem(1, item)
+        self.temp = QtWidgets.QLabel(self.centralwidget)
+        self.temp.setGeometry(QtCore.QRect(360, 70, 211, 31))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.temp.setFont(font)
+        self.temp.setObjectName("temp")
+        self.compass = QtWidgets.QWidget(self.centralwidget)
+        self.compass.setGeometry(QtCore.QRect(360, 180, 300, 300))
+        self.compass.setObjectName("compass")
+        self.currentLat = QtWidgets.QLabel(self.centralwidget)
+        self.currentLat.setGeometry(QtCore.QRect(360, 10, 221, 17))
+        self.currentLat.setObjectName("currentLat")
+        self.currentLong = QtWidgets.QLabel(self.centralwidget)
+        self.currentLong.setGeometry(QtCore.QRect(590, 10, 231, 17))
+        self.currentLong.setObjectName("currentLong")
+        self.targetLong = QtWidgets.QLineEdit(self.centralwidget)
+        self.targetLong.setGeometry(QtCore.QRect(680, 36, 141, 31))
+        self.targetLong.setObjectName("targetLong")
+        self.targetLat_2 = QtWidgets.QLabel(self.centralwidget)
+        self.targetLat_2.setGeometry(QtCore.QRect(360, 40, 81, 17))
+        self.targetLat_2.setObjectName("targetLat_2")
+        self.targetLat = QtWidgets.QLineEdit(self.centralwidget)
+        self.targetLat.setGeometry(QtCore.QRect(440, 36, 141, 31))
+        self.targetLat.setObjectName("targetLat")
+        self.targetLong_2 = QtWidgets.QLabel(self.centralwidget)
+        self.targetLong_2.setGeometry(QtCore.QRect(590, 40, 101, 17))
+        self.targetLong_2.setObjectName("targetLong_2")
+        self.signalStrength = QtWidgets.QProgressBar(self.centralwidget)
+        self.signalStrength.setGeometry(QtCore.QRect(520, 110, 118, 21))
+        self.signalStrength.setProperty("value", 24)
+        self.signalStrength.setObjectName("signalStrength")
+        self.signalStrengthLabel = QtWidgets.QLabel(self.centralwidget)
+        self.signalStrengthLabel.setGeometry(QtCore.QRect(360, 100, 161, 31))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.signalStrengthLabel.setFont(font)
+        self.signalStrengthLabel.setObjectName("signalStrengthLabel")
+        self.driveMode = QtWidgets.QLabel(self.centralwidget)
+        self.driveMode.setGeometry(QtCore.QRect(360, 140, 271, 31))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.driveMode.setFont(font)
+        self.driveMode.setObjectName("driveMode")
+        self.roverHeading = QtWidgets.QLabel(self.centralwidget)
+        self.roverHeading.setGeometry(QtCore.QRect(20, 150, 331, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.roverHeading.setFont(font)
+        self.roverHeading.setObjectName("roverHeading")
+        self.antennaHeading = QtWidgets.QLabel(self.centralwidget)
+        self.antennaHeading.setGeometry(QtCore.QRect(20, 180, 331, 21))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.antennaHeading.setFont(font)
+        self.antennaHeading.setObjectName("antennaHeading")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(680, 70, 99, 27))
+        self.pushButton.setObjectName("pushButton")
+        self.waypointTable = QtWidgets.QTableWidget(self.centralwidget)
+        self.waypointTable.setGeometry(QtCore.QRect(670, 110, 321, 191))
+        self.waypointTable.setObjectName("waypointTable")
+        self.waypointTable.setColumnCount(2)
+        self.waypointTable.setRowCount(5)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setVerticalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setVerticalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setVerticalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setVerticalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setVerticalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        item.setFont(font)
+        self.waypointTable.setHorizontalHeaderItem(1, item)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1024, 25))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-    # transform from gps coordinates to bearing
-    def gps_to_bearing(self, lat1, long1, lat2, long2):
-        delta_long = float(long2) - float(long1)
-        y = math.sin(delta_long) * math.cos(float(lat2))
-        x = math.cos(float(lat1)) * math.sin(float(lat2)) - math.sin(float(lat1))*math.cos(float(lat2))*math.cos(delta_long)
-        result = math.degrees(math.atan2(y, x))
-        return float(result)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def __init__(self, context):
-        super(Compass, self).__init__(context)
-        self.setObjectName('Compass')
-        self._publisher = None
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        item = self.batteryVoltage.verticalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Motor 1"))
+        item = self.batteryVoltage.verticalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Motor 2"))
+        item = self.batteryVoltage.verticalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Electronics"))
+        item = self.batteryVoltage.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Current"))
+        item = self.batteryVoltage.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Voltage"))
+        self.temp.setText(_translate("MainWindow", "Temperature: "))
+        self.currentLat.setText(_translate("MainWindow", "Current Lat:"))
+        self.currentLong.setText(_translate("MainWindow", "Current Long:"))
+        self.targetLat_2.setText(_translate("MainWindow", "Target Lat:"))
+        self.targetLong_2.setText(_translate("MainWindow", "Target Long:"))
+        self.signalStrengthLabel.setText(_translate("MainWindow", "Signal Strength: "))
+        self.driveMode.setText(_translate("MainWindow", "Drive Mode: "))
+        self.roverHeading.setText(_translate("MainWindow", "Rover Heading: "))
+        self.antennaHeading.setText(_translate("MainWindow", "Antenna Heading: "))
+        self.pushButton.setText(_translate("MainWindow", "Add"))
+        item = self.waypointTable.verticalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Waypoint 1"))
+        item = self.waypointTable.verticalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Waypoint 2"))
+        item = self.waypointTable.verticalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Waypoint 3"))
+        item = self.waypointTable.verticalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Waypoint 4"))
+        item = self.waypointTable.verticalHeaderItem(4)
+        item.setText(_translate("MainWindow", "Waypoint 5"))
+        item = self.waypointTable.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Distance"))
+        item = self.waypointTable.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Heading"))
 
-        self._widget = QWidget()
-        rp = rospkg.RosPack()
-        ui_file = os.path.join(rospkg.RosPack().get_path('rqt_compass'), 'resource', 'compass.ui')
-        loadUi(ui_file, self._widget)
-        self._widget.setObjectName('Compass')
-        if context.serial_number() > 1:
-            self._widget.setWindowTitle(
-            self._widget.windowTitle() + (' (%d)' % context.serial_number()))
-        context.add_widget(self._widget)
-        self.setup()
-        self._widget.goButton.clicked.connect(self.go_button_click)
-        self._widget.refresh = QtCore.QTimer()
-        self._widget.refresh.timeout.connect(self.update_compass)
-        self._widget.refresh.start(100)
-        self.listen()
-
-    base_position = {'lat': float(43.774497), 'long': float(-79.500872)}
-    base_bearing = float(0)
-    rover_position = {'lat': float(43.771529), 'long': float(-79.506777)}
-    rover_bearing = float(45)
-    goal_position = {'lat': float(43.771875), 'long': float(-79.503300)}
-    goal_bearing = float(0)
-    mode = "drive"
-    atmo = 0.0
-    rad = 0.0
-    rad_error = 0.0
-    temperature = 0.0
-    radio = 0.0
-    oxygen = 0.0
-    load = 0.0
-    bearing_queue = Queue.Queue(maxsize=10)	
-
-    def add_bearing(self, bearing):
-	if (self.bearing_queue.qsize() >= 10):
-                self.bearing_queue.get()
-        if bearing >= 360:
-            bearing -= 360
-	self.bearing_queue.put(bearing)
-
-    def get_bearing(self):
-        bearing_total = 0.0
-	ne, se = 0, 0
-        bearing_copy = Queue.Queue(maxsize=10)
-        while (not self.bearing_queue.empty()):
-	    bearing = self.bearing_queue.get()
-	    bearing_total += bearing
-            if bearing > 270:
-                se += 1
-            elif bearing < 90:
-                ne += 1
-            bearing_copy.put(bearing)
-        if ne > 0 and se > 0:
-            bearing_total -= 360 * se
-        self.bearing_queue = bearing_copy
-        result = bearing_total / float(self.bearing_queue.qsize())
-        if result >= 360:
-            result -= 360
-	return result
-
-    def go_button_click(self):
-        try:
-            self.goal_position['lat'] = float(self._widget.latText.text())
-            self.goal_position['long'] = float(self._widget.longText.text())
-            self.update_compass()
-            self.update_data()
-        except:
-            self._widget.bearingLabel.setText("error")
-
-    def listen(self):
-        self.mag_sub = rospy.Subscriber("/compass", Float32, self.mag_callback)
-        self.base_sub = rospy.Subscriber("/base_gps_data", NavSatFix, self.base_callback)
-        self.rover_sub = rospy.Subscriber("/rover_gps_data", NavSatFix, self.rover_callback)
-	self.mode_sub = rospy.Subscriber("/mode", String, self.mode_callback)
-	self.atmo_sub = rospy.Subscriber("/pressure", Float32, self.atmo_callback)
-	self.rad_sub = rospy.Subscriber("/radiation", Float32, self.rad_callback)
-	self.rad_error_sub = rospy.Subscriber("/radiation_error", Float32, self.rad_error_callback)
-	self.temp_sub = rospy.Subscriber("/temperature", Float32, self.temperature_callback)
-	self.radio_sub = rospy.Subscriber("/radio", Float32, self.radio_callback)
-	self.oxygen_sub = rospy.Subscriber("/oxygen", Float32, self.oxygen_callback)
-	self.load_sub = rospy.Subscriber("/load", Float32, self.load_callback)
-        pass
-
-    def load_callback(self, data):
-	self.load = data.data
-    def oxygen_callback(self, data):
-	self.oxygen = data.data
-    def temperature_callback(self, data):
-        self.temperature = data.data
-    def radio_callback(self, data):
-	self.radio = data.data
-    def atmo_callback(self, data):
-	self.atmo = data.data
-    def rad_callback(self, data):
-	self.atmo = data.data
-    def rad_error_callback(self, data):
-	self.rad_error = data.data
-    def mode_callback(self, data):
-	self.mode = data.data;
-    def mag_callback(self, data):
-        self.add_bearing( (float(data.data) + 90) )
-        self.rover_bearing = self.get_bearing()
-    def rover_callback(self, data):
-        self.rover_position['long'] = data.longitude
-        self.rover_position['lat'] = data.latitude
-    def base_callback(self, data):
-        self.base_position['long'] = data.longitude
-        self.base_position['lat'] = data.latitude
-    def update_compass(self):
-        self.setImage(compass_image, 300, 300, self._widget.compass, self.rover_bearing, scale = False)
-        self.refresh_goal()
-        self.refresh_base()
-        self.update_data()
-    def update_data(self):
-        self._widget.bearingLabel.setText(("%.2f degrees" % (self.rover_bearing)));
-        self._widget.goalDistanceData.setText(("%.3f km" % self.distance(self.rover_position, self.goal_position)))
-        self._widget.baseDistance.setText(("%.3f km" % self.distance(self.rover_position, self.base_position)))
-	self._widget.modeData.setText(self.mode)
-	self._widget.airPressureData.setText(("%.2f kPa" % (self.atmo)))
-	self._widget.radiationData.setText(("%.2f uSv +/- %.2f" % (self.rad, self.rad_error)))
-        self._widget.temperatureData.setText(("%.2f C" % self.temperature))
-	self._widget.radioData.setText(("%.2f V" % self.radio))
-	self._widget.oxygenData.setText(("%.4f" % self.oxygen))
-	self._widget.loadData.setText(("%.2f" % self.load))
-    def distance (self, pos1, pos2):
-        R = 6371
-        deltaLat = math.radians(pos2['lat'] -  pos1['lat'])
-        deltaLong = math.radians(pos2['long'] - pos1['long'])
-        a =  math.pow(math.sin(deltaLat / 2.0), 2) + math.cos(math.radians(pos1['lat']))*math.cos(math.radians(pos2['lat'])) * math.pow(math.sin(deltaLong / 2.0), 2)
-        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-	return c * R
-
-    def refresh_goal(self):
-        self.goal_bearing = self.gps_to_bearing(self.rover_position['lat'], self.rover_position['long'], self.goal_position['lat'], self.goal_position['long'])
-        self.setTargetPosition(self._widget.destination, self.goal_bearing + self.rover_bearing, self._widget.compass)
-
-    def refresh_base(self):
-        self.base_bearing = self.gps_to_bearing(self.rover_position['lat'], self.rover_position['long'], self.base_position['lat'], self.base_position['long'])
-        self.setTargetPosition(self._widget.base, self.base_bearing + self.rover_bearing, self._widget.compass)
-
-    def shutdown_plugin(self):
-        # Tunregister all publishers here
-        self.mag_sub.unregister()
-        self.base_sub.unregister()
-        self.rover_sub.unregister()
-	self.mode_sub.unregister()
-        pass
-
-    def save_settings(self, plugin_settings, instance_settings):
-        # TODO save intrinsic configuration, usually using:
-        #instance_settings.set_value(k, v)
-        #instance_settings.set_value('bearing', self.rover_bearing)
-        #instance_settings.set_value('rover_position', self.rover_position)
-        #instance_settings.set_value('base_position', self.base_position)
-        #instance_settings.set_value('goal_position', self.goal_position)
-        pass
-
-    def restore_settings(self, plugin_settings, instance_settings):
-        # TODO restore intrinsic configuration, usually using:
-        # v = instance_settings.value(k)
-        #self.rover_bearing = float(instance_settings.value('bearing'))
-        #self.rover_position = instance_settings.value('rover_position')
-        #self.base_position = instance_settings.value('base_position')
-        #self.goal_position = instance_settings.value('goal_position')
-        pass
