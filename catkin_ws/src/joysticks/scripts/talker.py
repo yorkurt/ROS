@@ -97,6 +97,8 @@ def joystick_callback_right(data):
 	side_axis = 0
 	turret_axis = 2
 	throttle = 3
+	camera = 4
+
 	middle_button = 5
 	turret_left = 6
 	turret_right = 7
@@ -105,6 +107,7 @@ def joystick_callback_right(data):
 	right_y = 255 * data.axes[right_axis] # obtain right thumbstick data
 	right_x = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
 	right_t = (data.axes[throttle] + 1) / 2.0
+	camera_rotation = 1024 * data.axes[camera]
 
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
@@ -131,6 +134,9 @@ def joystick_callback_right(data):
 			pub_turret.publish(255 * turret_mult)
 		else:
 			pub_turret.publish(0)
+
+	# always publish camera
+	pub_camera.publish(camera_rotation)
 
 def headlight_switch(button):
 	global headlights_mode
@@ -182,6 +188,7 @@ def start():
 	global pub_headlights
 	global pub_mode
 	global pub_lock
+	global pub_camera
 
 	# create publishers
 	pub_drive = rospy.Publisher('drive', drive, queue_size=1)
@@ -192,6 +199,7 @@ def start():
 	pub_headlights = rospy.Publisher("headlights", Int16, queue_size=1)
 	pub_mode = rospy.Publisher("mode", String, queue_size=1)
 	pub_lock = rospy.Publisher("lock_grip", Bool, queue_size=1)
+	pub_camera = rospy.Publisher('camera_rotation', Int16, queue_size=1)
 	pub_mode.publish(mode)
 
 	msg = Bool()
