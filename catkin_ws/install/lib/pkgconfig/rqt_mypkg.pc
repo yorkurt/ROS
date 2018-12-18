@@ -1,8 +1,8 @@
 prefix=/home/adam/ros/catkin_ws/install
 
-Name: opencv_tests
-Description: Description of opencv_tests
-Version: 1.12.8
+Name: rqt_mypkg
+Description: Description of rqt_mypkg
+Version: 0.0.0
 Cflags: 
 Libs: -L/home/adam/ros/catkin_ws/install/lib 
 Requires: 

@@ -67,14 +67,14 @@ set(image_geometry_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(image_geometry_SOURCE_PREFIX /home/yurt/catkin_ws/src/vision_opencv/image_geometry)
-  set(image_geometry_DEVEL_PREFIX /home/yurt/catkin_ws/devel)
+  set(image_geometry_SOURCE_PREFIX /home/adam/ros/catkin_ws/src/vision_opencv/image_geometry)
+  set(image_geometry_DEVEL_PREFIX /home/adam/ros/catkin_ws/devel)
   set(image_geometry_INSTALL_PREFIX "")
   set(image_geometry_PREFIX ${image_geometry_DEVEL_PREFIX})
 else()
   set(image_geometry_SOURCE_PREFIX "")
   set(image_geometry_DEVEL_PREFIX "")
-  set(image_geometry_INSTALL_PREFIX /home/yurt/catkin_ws/install)
+  set(image_geometry_INSTALL_PREFIX /home/adam/ros/catkin_ws/install)
   set(image_geometry_PREFIX ${image_geometry_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(image_geometry_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include;/opt/ros/kinetic/include/opencv-3.3.1-dev;/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv " STREQUAL " ")
+if(NOT "include;/usr/local/include;/usr/local/include/opencv " STREQUAL " ")
   set(image_geometry_INCLUDE_DIRS "")
-  set(_include_dirs "include;/opt/ros/kinetic/include/opencv-3.3.1-dev;/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv")
+  set(_include_dirs "include;/usr/local/include;/usr/local/include/opencv")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://www.ros.org/wiki/image_geometry " STREQUAL " ")
@@ -110,13 +110,13 @@ if(NOT "include;/opt/ros/kinetic/include/opencv-3.3.1-dev;/opt/ros/kinetic/inclu
         message(FATAL_ERROR "Project 'image_geometry' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'image_geometry' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/yurt/catkin_ws/install/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'image_geometry' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/adam/ros/catkin_ws/install/${idir}'.  ${_report}")
     endif()
     _list_append_unique(image_geometry_INCLUDE_DIRS ${include})
   endforeach()
 endif()
 
-set(libraries "image_geometry;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1;/opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1")
+set(libraries "image_geometry;/usr/local/lib/libopencv_dnn.so.3.4.4;/usr/local/lib/libopencv_photo.so.3.4.4;/usr/local/lib/libopencv_videoio.so.3.4.4;/usr/local/lib/libopencv_objdetect.so.3.4.4;/usr/local/lib/libopencv_ml.so.3.4.4;/usr/local/lib/libopencv_video.so.3.4.4;/usr/local/lib/libopencv_calib3d.so.3.4.4;/usr/local/lib/libopencv_superres.so.3.4.4;/usr/local/lib/libopencv_shape.so.3.4.4;/usr/local/lib/libopencv_videostab.so.3.4.4;/usr/local/lib/libopencv_core.so.3.4.4;/usr/local/lib/libopencv_flann.so.3.4.4;/usr/local/lib/libopencv_imgproc.so.3.4.4;/usr/local/lib/libopencv_highgui.so.3.4.4;/usr/local/lib/libopencv_viz.so.3.4.4;/usr/local/lib/libopencv_stitching.so.3.4.4;/usr/local/lib/libopencv_features2d.so.3.4.4;/usr/local/lib/libopencv_imgcodecs.so.3.4.4;/usr/local/lib/libopencv_surface_matching.so.3.4.4;/usr/local/lib/libopencv_xphoto.so.3.4.4;/usr/local/lib/libopencv_optflow.so.3.4.4;/usr/local/lib/libopencv_img_hash.so.3.4.4;/usr/local/lib/libopencv_xfeatures2d.so.3.4.4;/usr/local/lib/libopencv_datasets.so.3.4.4;/usr/local/lib/libopencv_ximgproc.so.3.4.4;/usr/local/lib/libopencv_plot.so.3.4.4;/usr/local/lib/libopencv_structured_light.so.3.4.4;/usr/local/lib/libopencv_face.so.3.4.4;/usr/local/lib/libopencv_tracking.so.3.4.4;/usr/local/lib/libopencv_fuzzy.so.3.4.4;/usr/local/lib/libopencv_dnn_objdetect.so.3.4.4;/usr/local/lib/libopencv_hfs.so.3.4.4;/usr/local/lib/libopencv_bioinspired.so.3.4.4;/usr/local/lib/libopencv_dpm.so.3.4.4;/usr/local/lib/libopencv_xobjdetect.so.3.4.4;/usr/local/lib/libopencv_phase_unwrapping.so.3.4.4;/usr/local/lib/libopencv_aruco.so.3.4.4;/usr/local/lib/libopencv_ccalib.so.3.4.4;/usr/local/lib/libopencv_freetype.so.3.4.4;/usr/local/lib/libopencv_rgbd.so.3.4.4;/usr/local/lib/libopencv_line_descriptor.so.3.4.4;/usr/local/lib/libopencv_bgsegm.so.3.4.4;/usr/local/lib/libopencv_saliency.so.3.4.4;/usr/local/lib/libopencv_text.so.3.4.4;/usr/local/lib/libopencv_reg.so.3.4.4;/usr/local/lib/libopencv_stereo.so.3.4.4;/usr/local/lib/libopencv_hdf.so.3.4.4")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yurt/catkin_ws/install/lib;/home/yurt/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/adam/ros/catkin_ws/install/lib;/home/adam/ros/catkin_ws/devel/lib;/home/adam/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
