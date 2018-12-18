@@ -42,9 +42,9 @@ def joystick_callback_left(data): # Logitech Attack 3
 
 	grip_cw = 7
 	grip_ccw = 8
-
 	claw_open = 2
 	claw_close = 1
+	trigger = 0
 
 	left_y = 255 * data.axes[left_axis] # obtain left thumbstick y-axis data
 	left_x = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
@@ -53,8 +53,12 @@ def joystick_callback_left(data): # Logitech Attack 3
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
 		msg = drive()
-		msg.left = left_y * right_t
-		msg.right = right_y * right_t
+		if data.buttons[trigger] != 1:
+			msg.left = left_y * right_t
+			msg.right = right_y * right_t
+		else:
+			msg.left = 0
+			msg.right = 0
 		pub_drive.publish(msg)
 		pub_turret.publish(left_x * turret_mult)
 	# grip mode: publish axis data to grip topic
@@ -102,6 +106,7 @@ def joystick_callback_right(data):
 	middle_button = 5
 	turret_left = 6
 	turret_right = 7
+	trigger = 0
 	
 	mode_switch(data.buttons[middle_button]) # switch modes if the middle button is pressed
 	right_y = 255 * data.axes[right_axis] # obtain right thumbstick data
@@ -112,8 +117,12 @@ def joystick_callback_right(data):
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
 		msg = drive()
-		msg.left = left_y * right_t
-		msg.right = right_y * right_t
+		if data.buttons[trigger] != 1:
+			msg.left = left_y * right_t
+			msg.right = right_y * right_t
+		else:
+			msg.left = 0
+			msg.right = 0
 		pub_drive.publish(msg)
 
 		msg = arm()
@@ -187,9 +196,7 @@ def timeoutCallback(event):
 	pub_timeout.publish(msg)
 
 def checkController():
-	result = os.path.exists(controller_port_left)
-	if (not result):
-		reset_offset()
+	result = os.path.exists(controller_port_left) and os.path.exists(controller_port_right)
 	return result
 	
 if __name__ == '__main__':
