@@ -138,17 +138,6 @@ def joystick_callback_right(data):
 	# always publish camera
 	pub_camera.publish(camera_rotation)
 
-def headlight_switch(button):
-	global headlights_mode
-	global pub_headlights
-	if button == 1:
-		result = 0
-		if headlights_mode == "on":
-			headlights_mode = "off"
-		else:
-			headlights_mode = "on"
-			result = 255
-		pub_headlights.publish(result)
 # switch the control mode
 def mode_switch(button):
 	global mode
@@ -158,18 +147,6 @@ def mode_switch(button):
 		else:
 			mode = "drive"
 		pub_mode.publish(mode);
-
-def lock_switch(button):
-	global lock
-	global mode
-	if button == 1 and mode == "grip":
-		if lock == True:
-			lock = False
-		else:
-			lock = True
-		msg = Bool()
-		msg.data = lock
-		pub_lock.publish(msg)
 	
 # Intializes everything
 def start():
@@ -185,9 +162,7 @@ def start():
 	global pub_grip
 	global pub_turret
 	global pub_timeout
-	global pub_headlights
 	global pub_mode
-	global pub_lock
 	global pub_camera
 
 	# create publishers
@@ -196,25 +171,15 @@ def start():
 	pub_grip = rospy.Publisher('grip', grip, queue_size=1)
 	pub_turret = rospy.Publisher('turret', Int16, queue_size=1)
 	pub_timeout = rospy.Publisher('controller_timeout', Bool, queue_size=1)
-	pub_headlights = rospy.Publisher("headlights", Int16, queue_size=1)
 	pub_mode = rospy.Publisher("mode", String, queue_size=1)
-	pub_lock = rospy.Publisher("lock_grip", Bool, queue_size=1)
 	pub_camera = rospy.Publisher('camera_rotation', Int16, queue_size=1)
 	pub_mode.publish(mode)
-
-	msg = Bool()
-	msg.data = False
-	pub_lock.publish(msg)
 
 	# subscribed to joystick inputs on topic "joy"
 	rospy.Subscriber("controller_left", Joy, joystick_callback_left)
 	rospy.Subscriber("controller_right", Joy, joystick_callback_right)
 	rospy.Timer(rospy.Duration(0.2), timeoutCallback)
 	rospy.spin()
-
-	#rospy.Subscriber("controller_right", Joy, joystick_callback_right)
-	#rospy.Timer(rospy.Duration(0.2), timeoutCallback)
-	#rospy.spin()
 
 def timeoutCallback(event):
 	msg = Bool()
@@ -226,12 +191,6 @@ def checkController():
 	if (not result):
 		reset_offset()
 	return result
-
-def reset_offset():
-	global left_offset
-	global right_offset
-	left_offset = -1
-	right_offset = -1
 	
 if __name__ == '__main__':
 	start()
