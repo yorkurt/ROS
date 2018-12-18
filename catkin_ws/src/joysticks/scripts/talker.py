@@ -13,94 +13,125 @@ left_offset = -1
 right_offset = -1
 headlights_mode = "off"
 
-left_stick = 0
-right_stick = 0
+left_y = 0
+right_y = 0
+left_x = 0
+right_x = 0
+left_t = 0
+right_t = 0
+
+turret_mult = 0.25
 
 # responds to raw joystick data, splitting it into topics relevant to different devices
 def joystick_callback_left(data): # Logitech Attack 3
 	global mode # the current mode of the control system
 	global left_offset
 	global right_offset
-	global left_stick
-	global right_stick
+	global left_y
+	global right_y
+	global left_x
+	global right_x
+	global left_t
+	global right_t
+	global turret_mult
+
 
 	left_axis = 1
 	side_axis = 0
-	throttle = 3
-	middle_button = 2
+	throttle = 2
 
+	grip_cw = 7
+	grip_ccw = 8
 
-	mode_switch(data.buttons[middle_button]) # switch modes if the middle button is pressed
-	left_stick = 255 * data.axes[left_axis] # obtain left thumbstick y-axis data
-	side_stick = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
+	claw_open = 2
+	claw_close = 1
 
+	left_y = 255 * data.axes[left_axis] # obtain left thumbstick y-axis data
+	left_x = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
+	left_t = (data.axes[throttle] + 1) / 2.0
 
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
 		msg = drive()
-		msg.left = left_stick
-		msg.right = right_stick
+		msg.left = left_y * right_t
+		msg.right = right_y * right_t
 		pub_drive.publish(msg)
-	# arm mode: publish axis data to arm topic
-	'''elif mode == "arm":
-		msg = arm()
-		msg.joint1 = left_stick
-		msg.joint2 = right_stick
-		msg.joint3 = up_down
-		pub_arm.publish(msg)
+		pub_turret.publish(left_x * turret_mult)
 	# grip mode: publish axis data to grip topic
 	else:
 		msg = grip()
-		msg.grip = up_down
-		msg.roll = left_stick
-		msg.pan = right_stick
-		pub_grip.publish(msg)'''
 
+		if data.buttons[grip_cw] == 1:
+			msg.roll = -255 * left_t
+		elif data.buttons[grip_ccw] == 1:
+			msg.roll = 255 * left_t
+		else:
+			msg.roll = 0
 
+		if data.buttons[claw_open] == 1:
+			msg.claw = 255 * left_t
+		elif data.buttons[claw_close] == 1:
+			msg.claw = -255 * left_t
+		else:
+			msg.claw = 0
+
+				
+		msg.pitch = left_y * left_t
+		msg.yaw = left_x * left_t
+
+		pub_grip.publish(msg)
+	
 def joystick_callback_right(data):
 	global mode # the current mode of the control system
 	global left_offset
 	global right_offset
-	global left_stick
-	global right_stick
+	global left_y
+	global right_y
+	global left_x
+	global right_x
+	global left_t
+	global right_t
+	global turret_mult
 
 	right_axis = 1
 	side_axis = 0
 	turret_axis = 2
 	throttle = 3
-	middle_button = 2
-
-
+	middle_button = 5
+	turret_left = 6
+	turret_right = 7
+	
 	mode_switch(data.buttons[middle_button]) # switch modes if the middle button is pressed
-	right_stick = 255 * data.axes[right_axis] # obtain right thumbstick data
-	side_stick = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
+	right_y = 255 * data.axes[right_axis] # obtain right thumbstick data
+	right_x = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
+	right_t = (data.axes[throttle] + 1) / 2.0
 
-
-	# set turret to difference of right and left sides
-	turret = 255 * data.axes[turret_axis]
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
 		msg = drive()
-		msg.left = left_stick
-		msg.right = right_stick
+		msg.left = left_y * right_t
+		msg.right = right_y * right_t
 		pub_drive.publish(msg)
-	# arm mode: publish axis data to arm topic
-	'''elif mode == "arm":
-		msg = arm()
-		msg.joint1 = left_stick
-		msg.joint2 = right_stick
-		msg.joint3 = up_down
-		pub_arm.publish(msg)
-	# grip mode: publish axis data to grip topic
-	else:
-		msg = grip()
-		msg.grip = up_down
-		msg.roll = left_stick
-		msg.pan = right_stick
-		pub_grip.publish(msg)'''
 
-	# publish turret data
-	pub_turret.publish(turret)
+		msg = arm()
+		msg.joint1 = right_x
+		msg.joint2 = 0
+		pub_arm.publish(msg)
+
+	# arm mode: publish axis data to arm topic
+	else:
+		msg = arm()
+		msg.joint1 = right_y
+		msg.joint2 = right_x
+		pub_arm.publish(msg)
+		
+		if data.buttons[turret_left] == 1:
+			pub_turret.publish(-255 * turret_mult)
+		elif data.buttons[turret_right] == 1:
+			pub_turret.publish(255 * turret_mult)
+		else:
+			pub_turret.publish(0)
+
 def headlight_switch(button):
 	global headlights_mode
 	global pub_headlights
@@ -118,8 +149,6 @@ def mode_switch(button):
 	if button == 1:
 		if mode == "drive":
 			mode = "arm"
-		elif mode == "arm":
-			mode = "grip"
 		else:
 			mode = "drive"
 		pub_mode.publish(mode);
