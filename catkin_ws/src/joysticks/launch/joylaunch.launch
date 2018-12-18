@@ -1,10 +1,16 @@
 <launch>
 
  <!-- joy node -->
-  <node respawn="true" pkg="joy" type="joy_node" name="controller" >
+  <node respawn="true" pkg="joy" type="joy_node" name="controller_left" >
     <param name="dev" type="string" value="/dev/input/js0" />
     <param name="deadzone" value="0.12" />
-    <remap from="joy" to="controller" />
+    <remap from="joy" to="controller_left" />
+  </node>
+
+  <node respawn="true" pkg="joy" type="joy_node" name="controller_right" >
+    <param name="dev" type="string" value="/dev/input/js1" />
+    <param name="deadzone" value="0.12" />
+    <remap from="joy" to="controller_right" />
   </node>
 
   <node pkg="joysticks" name="translator" type="talker.py">

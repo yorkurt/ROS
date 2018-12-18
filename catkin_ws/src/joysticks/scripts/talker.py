@@ -5,42 +5,36 @@ from sensor_msgs.msg import Joy
 from joysticks.msg import drive, arm, grip
 import os
 
-controller_topic = "controller"
-controller_port = rospy.get_param(controller_topic)['dev']
+controller_topic_left = "controller_left"
+controller_port_left = rospy.get_param(controller_topic_left)['dev']
+controller_topic_right = "controller_left"
+controller_port_right = rospy.get_param(controller_topic_right)['dev']
 left_offset = -1
 right_offset = -1
 headlights_mode = "off"
+
+left_stick = 0
+right_stick = 0
+
 # responds to raw joystick data, splitting it into topics relevant to different devices
-def joystick_callback(data):
+def joystick_callback_left(data): # Logitech Attack 3
 	global mode # the current mode of the control system
 	global left_offset
 	global right_offset
+	global left_stick
+	global right_stick
 
 	left_axis = 1
-	right_axis = 4
-	right_shoulder = 5
-	left_shoulder = 2
-	middle_button = 10
-	up_down_axis = 7
-	headlight_button = 3
-	lock_button = 2
+	side_axis = 0
+	throttle = 3
+	middle_button = 2
 
 
-	headlight_switch(data.buttons[headlight_button])
-	lock_switch(data.buttons[lock_button])
 	mode_switch(data.buttons[middle_button]) # switch modes if the middle button is pressed
-	left_stick = 255 * data.axes[left_axis] # obtain left thumbstick data
-	right_stick = 255 * data.axes[right_axis] # obtain right thumbstick data
-	up_down = 255 * data.axes[up_down_axis] # obtain d-pad data
+	left_stick = 255 * data.axes[left_axis] # obtain left thumbstick y-axis data
+	side_stick = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
 
-	# buttons initialize at 0 rather than -1, so compensate for startup:
-	if left_offset != 0 and data.axes[right_shoulder] != 0:
-		left_offset = 0
-	elif right_offset != 0 and data.axes[left_shoulder] != 0:
-		right_offset = 0
 
-	# set turret to difference of right and left sides
-	turret = ((data.axes[left_shoulder] + 1 + left_offset)*0.5 + (data.axes[right_shoulder] + 1 + right_offset)*-0.5) * 255
 	# drive mode: publish axis data to drive topic
 	if mode == "drive":
 		msg = drive()
@@ -48,7 +42,7 @@ def joystick_callback(data):
 		msg.right = right_stick
 		pub_drive.publish(msg)
 	# arm mode: publish axis data to arm topic
-	elif mode == "arm":
+	'''elif mode == "arm":
 		msg = arm()
 		msg.joint1 = left_stick
 		msg.joint2 = right_stick
@@ -60,7 +54,50 @@ def joystick_callback(data):
 		msg.grip = up_down
 		msg.roll = left_stick
 		msg.pan = right_stick
-		pub_grip.publish(msg)
+		pub_grip.publish(msg)'''
+
+
+def joystick_callback_right(data):
+	global mode # the current mode of the control system
+	global left_offset
+	global right_offset
+	global left_stick
+	global right_stick
+
+	right_axis = 1
+	side_axis = 0
+	turret_axis = 2
+	throttle = 3
+	middle_button = 2
+
+
+	mode_switch(data.buttons[middle_button]) # switch modes if the middle button is pressed
+	right_stick = 255 * data.axes[right_axis] # obtain right thumbstick data
+	side_stick = 255 * data.axes[side_axis] # obtain left thumbstick x-axis data
+
+
+	# set turret to difference of right and left sides
+	turret = 255 * data.axes[turret_axis]
+	# drive mode: publish axis data to drive topic
+	if mode == "drive":
+		msg = drive()
+		msg.left = left_stick
+		msg.right = right_stick
+		pub_drive.publish(msg)
+	# arm mode: publish axis data to arm topic
+	'''elif mode == "arm":
+		msg = arm()
+		msg.joint1 = left_stick
+		msg.joint2 = right_stick
+		msg.joint3 = up_down
+		pub_arm.publish(msg)
+	# grip mode: publish axis data to grip topic
+	else:
+		msg = grip()
+		msg.grip = up_down
+		msg.roll = left_stick
+		msg.pan = right_stick
+		pub_grip.publish(msg)'''
 
 	# publish turret data
 	pub_turret.publish(turret)
@@ -133,9 +170,14 @@ def start():
 	pub_lock.publish(msg)
 
 	# subscribed to joystick inputs on topic "joy"
-	rospy.Subscriber("controller", Joy, joystick_callback)
+	rospy.Subscriber("controller_left", Joy, joystick_callback_left)
+	rospy.Subscriber("controller_right", Joy, joystick_callback_right)
 	rospy.Timer(rospy.Duration(0.2), timeoutCallback)
 	rospy.spin()
+
+	#rospy.Subscriber("controller_right", Joy, joystick_callback_right)
+	#rospy.Timer(rospy.Duration(0.2), timeoutCallback)
+	#rospy.spin()
 
 def timeoutCallback(event):
 	msg = Bool()
@@ -143,7 +185,7 @@ def timeoutCallback(event):
 	pub_timeout.publish(msg)
 
 def checkController():
-	result = os.path.exists(controller_port)
+	result = os.path.exists(controller_port_left)
 	if (not result):
 		reset_offset()
 	return result
