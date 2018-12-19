@@ -3,13 +3,12 @@ import rospy
 from sensor_msgs.msg import NavSatFix
 from std_msgs.msg import Float32
 import os
-from geographiclib.geodesic import Geodesic
-import math
 
+base_topic = "base_station"
+rover_topic = "rover"
 rover_position = {'long': 45.0, 'lat': 45.0}
 base_position = {'long': 45.0, 'lat': 45.0}
 
-geod = Geodesic.WGS84
 
 def rover_callback(data):
 	global rover_position
@@ -27,17 +26,12 @@ def base_callback(data):
 def get_location(fix):
 	return fix.longitude, fix.latitude
 
-def get_inverse():
-	g = geod.Inverse(rover_position['lat'], rover_position['long'], base_position['lat'], base_position['long']
-	return g
-
 def get_bearing():
-	g = get_inverse()
-	return g['a12']
-
-def get_distance():
-	g = get_inverse()
-	return g['s12']
+        delta_long = float(rover_position['long']) - float(base_position['long'])
+        y = math.sin(delta_long) * math.cos(float(rover_position['lat']))
+        x = math.cos(float(base_position['lat'])) * math.sin(float(rover_position['lat'])) - math.sin(float(base_position['lat']))*math.cos(float(rover_position['lat']))*math.cos(delta_long)
+        result = math.degrees(math.atan2(y, x))
+        return float(result)
 
 def publish_bearing(bearing):
 	pub_base_bearing.publish(get_bearing())
@@ -51,9 +45,9 @@ def start():
 	# create publishers
 	pub_base_bearing = rospy.Publisher('base_bearing', Float32, queue_size=1)
 
-	# subscribed to position inputs
-	rospy.Subscriber("base_pos", NavSatFix, base_callback)
-	rospy.Subscriber("rover_pos", NavSatFix, rover_callback)
+	# subscribed to joystick inputs on topic "joy"
+	rospy.Subscriber(base_topic, NavSatFix, base_callback)
+	rospy.Subscriber(rover_topic, NavSatFix, rover_callback)
 	rospy.spin()
 	
 if __name__ == '__main__':
