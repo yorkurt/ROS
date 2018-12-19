@@ -27,7 +27,7 @@ def get_location(fix):
 
 def get_bearing():
 	from geographiclib.geodesic import Geodesic
-	g = Geodesic.WGS84.Inverse(rover_position['lat'], rover_position['long'], base_position['lat'], base_position['long'])
+	g = Geodesic.WGS84.Inverse( base_position['lat'], base_position['long'], rover_position['lat'], rover_position['long'])
 	return g['a12']
 
 
