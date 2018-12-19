@@ -31,7 +31,7 @@ def get_bearing():
 	return g['a12']
 
 
-def publish_bearing(bearing):
+def publish_bearing():
 	pub_base_bearing.publish(get_bearing())
 
 def start():
