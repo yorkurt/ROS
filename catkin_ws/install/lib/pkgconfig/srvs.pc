@@ -1,8 +1,0 @@
-prefix=/home/adam/ros/catkin_ws/install
-
-Name: srvs
-Description: Description of srvs
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/adam/ros/catkin_ws/install/lib 
-Requires: 

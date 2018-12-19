@@ -9,8 +9,6 @@ import math
 rover_position = {'long': 45.0, 'lat': 45.0}
 base_position = {'long': 45.0, 'lat': 45.0}
 
-geod = Geodesic.WGS84
-
 def rover_callback(data):
 	global rover_position
 
@@ -27,17 +25,11 @@ def base_callback(data):
 def get_location(fix):
 	return fix.longitude, fix.latitude
 
-def get_inverse():
-	g = geod.Inverse(rover_position['lat'], rover_position['long'], base_position['lat'], base_position['long']
-	return g
-
 def get_bearing():
-	g = get_inverse()
+	from geographiclib.geodesic import Geodesic
+	g = Geodesic.WGS84.Inverse(rover_position['lat'], rover_position['long'], base_position['lat'], base_position['long'])
 	return g['a12']
 
-def get_distance():
-	g = get_inverse()
-	return g['s12']
 
 def publish_bearing(bearing):
 	pub_base_bearing.publish(get_bearing())
